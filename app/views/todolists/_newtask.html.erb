@@ -1,0 +1,13 @@
+<%= form_for(Todolist.new) do |f| %>
+	<div class="field row">
+    <h5>title</h5>
+    <%= f.text_field :title, class: "col-xs-12" %>
+	</div>
+  <div class="field row">
+    <h5>content</h5>
+    <%= f.text_area :content, class: "col-xs-12" %>
+	</div>
+	<div class="actions row">
+		<%= f.submit class: "btn btn-primary col-xs-12" %>
+	</div>
+<% end %>

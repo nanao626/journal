@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <br>
+      <h4>Calender<h4>
+        <%= render 'diaries/newdiary', diary: @diary %>
+
+      <h4>New task<h4>
+        <%= render 'todolists/newtask', todolist: @todolist %>
+    </div>
+    <div class="col-xs-8">
+      <h2>To do list</h2>
+      <table class="table table-hover table-inverse">
+        <thead class="thead-primary">
+          <tr>
+            <th>Task</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @todolists.each do |todolist| %>
+          <tr>
+            <th><%= todolist.title %></th>
+            <th><%= todolist.content %></th>
+            <th><%= link_to "Edit", edit_todolist_path(todolist), class: "btn-sm btn-success " %></th> 
+            <th><%= link_to "Destroy", todolist_path(todolist), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %></th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

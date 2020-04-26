@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <h2>To do list</h2>
+      <table class="table table-hover table-inverse">
+        <thead class="thead-primary">
+          <tr>
+            <th>Task</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @todolists.each do |todolist| %>
+          <tr>
+            <th><%= todolist.title %></th>
+            <th><%= todolist.content %></th>
+            <th><% link_to "show",todolist_path(@user), class: "btn btn-primary" %></th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+  <div class="row">
+    <h2>diary</h2>
+      <div class="col-xs-3">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <% @diaries.each do |diary| %>
+              <h5 class="card-title"><%= diary.title %></h5>
+              <p class="card-text"><%= diary.content %></p>
+              <% link_to "show",todolist_path(@user), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
