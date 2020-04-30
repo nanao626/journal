@@ -1,4 +1,20 @@
-<div class="front">
+<div class="box">
+  <div class="row">
+    <div class="text">
+      <div class="main col-md-offset-3 col-md-6">
+        <h1>welcome to<span class="glyphicon glyphicon-book"></span>
+          <strong>Journal</strong>  !!</h1>
+          <div class="btn-wrapper">
+            <div class="row">
+              <p><%=link_to "Log in", new_user_session_path, class: "btn btn-info col-xs-10 col-xs-offset-1" %></p>
+            </div>
+            <div class="row">
+              <p><%=link_to "Sign up", new_user_registration_path, class: "btn btn-success col-xs-10 col-xs-offset-1" %></p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
   <div class="skip">
     <div class="theTarget">
         <div style="background-image: url(<%= asset_path('test1.jpeg') %>)"></div>
@@ -7,3 +23,4 @@
         <div style="background-image: url(<%= asset_path('test4.jpeg') %>)"></div>
     </div>
   </div>
+</div>
